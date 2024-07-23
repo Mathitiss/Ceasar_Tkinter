@@ -3,11 +3,13 @@ import tkinter as tk
 
 # Window
 
-root=Tk()
+root = Tk()
 root.title("Caesar Ipher")
 root.geometry('1280x720')
 root.resizable(False, False)
 root.configure(bg='white')
+icon = PhotoImage(file = "logo.png")
+root.iconphoto(False, icon)
 
 # Buttons
 
@@ -20,4 +22,5 @@ btn2.grid(row=2, column=0, pady=5)
 btn2.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
 
 # On/Off
+
 root.mainloop()
