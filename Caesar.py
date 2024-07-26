@@ -11,6 +11,34 @@ root.configure(bg='white')
 # icon = PhotoImage(file = "logo.png")      This idiot doesn`t see image. But it is in same folder. Yesterday every thing worked fine !!!
 # root.iconphoto(False, icon)
 
+# ENG/RUS
+
+def ENG():
+    English = Tk()
+    English.title("Task")
+    English.geometry('1280x720')
+    English.resizable(False, False)
+    English.configure(bg='white')
+    root.destroy()
+
+def RUS():
+    Russian = Tk()
+    Russian.title("Задача")
+    Russian.geometry('1280x720')
+    Russian.resizable(False, False)
+    Russian.configure(bg='white')
+    root.destroy()
+
+# Buttons ENG/RUS
+
+btn_ENG = ttk.Button(root, text='ENGLISH', height=10, width=70, cursor="hand2", command=ENG)
+btn_ENG.grid(row=1, column=0, pady=5)
+btn_ENG.place(relx=0.5, rely=0.5, anchor=CENTER, y=-100)
+
+btn_RUS = ttk.Button(root, text='RUSSIAN', height=10, width=70, cursor="hand2", command=RUS)
+btn_RUS.grid(row=2, column=0, pady=5)
+btn_RUS.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
+
 # Encryption & Decryption
 
 def click1():
