@@ -11,7 +11,7 @@ root.configure(bg='white')
 # icon = PhotoImage(file = "logo.png")      This idiot doesn`t see image. But it is in same folder. Yesterday every thing worked fine !!!
 # root.iconphoto(False, icon)
 
-# ENG/RUS
+# ENG -> CHOOSE TASK
 
 def ENG():
     global English
@@ -55,16 +55,26 @@ def RUS():
 
     root.withdraw()
 
-# ENG -> Encryption & Decryption
+# ENG -> WORKING PLACE
 
 def Encr_ENG():
     global Encryption_ENG
 
     Encryption_ENG = Toplevel()
-    Encryption_ENG.title("Encryption")
+    Encryption_ENG.title("Encryption") 
     Encryption_ENG.geometry('1280x720')
     Encryption_ENG.resizable(False, False)
     Encryption_ENG.configure(bg='white')
+
+    Bar_Text = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=28)
+    Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
+
+    Bar_Digit = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=28)
+    Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    btn_complite = ttk.Button(Encryption_ENG, text='Accept', height=2, width=35, cursor="hand2") # , command=
+    btn_complite.grid(row=1, column=0, pady=5)
+    btn_complite.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
 
     English.withdraw()
 
@@ -77,9 +87,19 @@ def Decr_ENG():
     Decryption_ENG.resizable(False, False)
     Decryption_ENG.configure(bg='white')
 
+    Bar_Text = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=28)
+    Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
+
+    Bar_Digit = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=28)
+    Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    btn_complite = ttk.Button(Decryption_ENG, text='Accept', height=2, width=35, cursor="hand2") # , command=
+    btn_complite.grid(row=1, column=0, pady=5)
+    btn_complite.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
+
     English.withdraw()
 
-# RUS -> Encryption & Decryption
+# RUS -> WORKING PLACE
 
 def Encr_RUS():
     global Encryption_RUS
@@ -90,7 +110,17 @@ def Encr_RUS():
     Encryption_RUS.resizable(False, False)
     Encryption_RUS.configure(bg='white')
 
-    Russian.destroy()
+    Bar_Text = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=28)
+    Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
+
+    Bar_Digit = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=28)
+    Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    btn_complite = ttk.Button(Encryption_RUS, text='Подтвердть', height=2, width=35, cursor="hand2") # , command=
+    btn_complite.grid(row=1, column=0, pady=5)
+    btn_complite.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
+
+    Russian.withdraw()
 
 def Decr_RUS():
     global Decryption_RUS
@@ -101,9 +131,19 @@ def Decr_RUS():
     Decryption_RUS.resizable(False, False)
     Decryption_RUS.configure(bg='white')
 
-    Russian.destroy()
+    Bar_Text = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=28)
+    Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
-# Buttons ENG/RUS
+    Bar_Digit = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=28)
+    Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    btn_complite = ttk.Button(Decryption_RUS, text='Подтвердть', height=2, width=35, cursor="hand2") # , command=
+    btn_complite.grid(row=1, column=0, pady=5)
+    btn_complite.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
+
+    Russian.withdraw()
+
+# BUTTONS LANGUAGE CHOOSE
 
 btn_ENG = ttk.Button(root, text='ENGLISH', height=10, width=70, cursor="hand2", command=ENG)
 btn_ENG.grid(row=1, column=0, pady=5)
