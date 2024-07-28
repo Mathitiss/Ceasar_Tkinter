@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter as ttk
+from tkinter import font
 
 # Window
 
@@ -15,6 +16,7 @@ root.configure(bg='white')
 
 def ENG():
     global English
+    global button_font
 
     English = Toplevel()
     English.title("Task")
@@ -24,11 +26,11 @@ def ENG():
 
     # Buttons
 
-    btn_Encr_ENG = ttk.Button(English, text='Encryption', height=10, width=70, cursor="hand2", command=Encr_ENG)
+    btn_Encr_ENG = ttk.Button(English, text='Encryption', height=4, width=35, cursor="hand2", font=button_font, command=Encr_ENG)
     btn_Encr_ENG.grid(row=1, column=0, pady=5)
     btn_Encr_ENG.place(relx=0.5, rely=0.5, anchor=CENTER, y=-100)
 
-    btn_Decr_ENG = ttk.Button(English, text='Decryption', height=10, width=70, cursor="hand2", command=Decr_ENG)
+    btn_Decr_ENG = ttk.Button(English, text='Decryption', height=4, width=35, cursor="hand2", font=button_font, command=Decr_ENG)
     btn_Decr_ENG.grid(row=2, column=0, pady=5)
     btn_Decr_ENG.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
 
@@ -36,6 +38,7 @@ def ENG():
 
 def RUS():
     global Russian
+    global button_font
 
     Russian = Toplevel()
     Russian.title("Задача")
@@ -45,11 +48,11 @@ def RUS():
 
     # Buttons
 
-    btn_Encr_RUS = ttk.Button(Russian, text='Шифрование', height=10, width=70, cursor="hand2", command=Encr_RUS)
+    btn_Encr_RUS = ttk.Button(Russian, text='Шифрование', height=4, width=35, cursor="hand2", font=button_font, command=Encr_RUS)
     btn_Encr_RUS.grid(row=1, column=0, pady=5)
     btn_Encr_RUS.place(relx=0.5, rely=0.5, anchor=CENTER, y=-100)
 
-    btn_Decr_RUS = ttk.Button(Russian, text='Дешифрование', height=10, width=70, cursor="hand2", command=Decr_RUS)
+    btn_Decr_RUS = ttk.Button(Russian, text='Дешифрование', height=4, width=35, cursor="hand2", font=button_font, command=Decr_RUS)
     btn_Decr_RUS.grid(row=2, column=0, pady=5)
     btn_Decr_RUS.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
 
@@ -65,6 +68,9 @@ def Encr_ENG():
     Encryption_ENG.geometry('1280x720')
     Encryption_ENG.resizable(False, False)
     Encryption_ENG.configure(bg='white')
+
+    label_text = ttk.Label(Encryption_ENG, text="Write a word in the first row and a number of indent in the second", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
+    label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
 
     Bar_Text = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=28)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
@@ -145,11 +151,13 @@ def Decr_RUS():
 
 # BUTTONS LANGUAGE CHOOSE
 
-btn_ENG = ttk.Button(root, text='ENGLISH', height=10, width=70, cursor="hand2", command=ENG)
+button_font = font.Font(size=20)
+
+btn_ENG = ttk.Button(root, text='ENGLISH', height=4, width=35, cursor="hand2", command=ENG, font=button_font)
 btn_ENG.grid(row=1, column=0, pady=5)
 btn_ENG.place(relx=0.5, rely=0.5, anchor=CENTER, y=-100)
 
-btn_RUS = ttk.Button(root, text='RUSSIAN', height=10, width=70, cursor="hand2", command=RUS)
+btn_RUS = ttk.Button(root, text='RUSSIAN', height=4, width=35, cursor="hand2", command=RUS, font=button_font)
 btn_RUS.grid(row=2, column=0, pady=5)
 btn_RUS.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
 
