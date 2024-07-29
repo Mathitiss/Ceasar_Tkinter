@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as ttk
 from tkinter import font
+from tkinter import messagebox
 
 # Window
 
@@ -62,6 +63,7 @@ def RUS():
 
 def Encr_ENG():
     global Encryption_ENG
+    global Entry_font
 
     Encryption_ENG = Toplevel()
     Encryption_ENG.title("Encryption") 
@@ -71,12 +73,24 @@ def Encr_ENG():
 
     label_text = ttk.Label(Encryption_ENG, text="Write a word in the first row and a number of indent in the second", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
     label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
-
-    Bar_Text = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=28)
+    
+    entry_text1 = StringVar()
+    Bar_Text = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text1)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
-    Bar_Digit = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=28)
+    entry_text2 = StringVar()
+    Bar_Digit = Entry(Encryption_ENG, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text2)
     Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    def character_limit1(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:15])
+    def character_limit2(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:2])
+
+    entry_text1.trace("w", lambda *args: character_limit1(entry_text1))
+    entry_text2.trace("w", lambda *args: character_limit2(entry_text2))
 
     btn_complite = ttk.Button(Encryption_ENG, text='Accept', height=2, width=35, cursor="hand2") # , command=
     btn_complite.grid(row=1, column=0, pady=5)
@@ -86,6 +100,7 @@ def Encr_ENG():
 
 def Decr_ENG():
     global Decryption_ENG
+    global Entry_font
 
     Decryption_ENG = Toplevel()
     Decryption_ENG.title("Decryption")
@@ -96,11 +111,23 @@ def Decr_ENG():
     label_text = ttk.Label(Decryption_ENG, text="Write a word in the first row and a number of indent in the second", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
     label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
 
-    Bar_Text = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=28)
+    entry_text1 = StringVar()
+    Bar_Text = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text1)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
-    Bar_Digit = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=28)
+    entry_text2 = StringVar()
+    Bar_Digit = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text2)
     Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    def character_limit1(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:15])
+    def character_limit2(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:2])
+
+    entry_text1.trace("w", lambda *args: character_limit1(entry_text1))
+    entry_text2.trace("w", lambda *args: character_limit2(entry_text2))
 
     btn_complite = ttk.Button(Decryption_ENG, text='Accept', height=2, width=35, cursor="hand2") # , command=
     btn_complite.grid(row=1, column=0, pady=5)
@@ -112,6 +139,7 @@ def Decr_ENG():
 
 def Encr_RUS():
     global Encryption_RUS
+    global Entry_font
 
     Encryption_RUS = Toplevel()
     Encryption_RUS.title("Шифрование")
@@ -122,11 +150,23 @@ def Encr_RUS():
     label_text = ttk.Label(Encryption_RUS, text="Введите слово в первую строчку и отступ во вторую", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
     label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
 
-    Bar_Text = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=28)
+    entry_text1 = StringVar()
+    Bar_Text = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text1)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
-    Bar_Digit = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=28)
+    entry_text2 = StringVar()
+    Bar_Digit = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text2)
     Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    def character_limit1(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:15])
+    def character_limit2(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:2])
+
+    entry_text1.trace("w", lambda *args: character_limit1(entry_text1))
+    entry_text2.trace("w", lambda *args: character_limit2(entry_text2))
 
     btn_complite = ttk.Button(Encryption_RUS, text='Подтвердть', height=2, width=35, cursor="hand2") # , command=
     btn_complite.grid(row=1, column=0, pady=5)
@@ -136,6 +176,7 @@ def Encr_RUS():
 
 def Decr_RUS():
     global Decryption_RUS
+    global Entry_font
 
     Decryption_RUS = Toplevel()
     Decryption_RUS.title("Дешифрование")
@@ -146,11 +187,23 @@ def Decr_RUS():
     label_text = ttk.Label(Decryption_RUS, text="Введите слово в первую строчку и отступ во вторую", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
     label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
 
-    Bar_Text = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=28)
+    entry_text1 = StringVar()
+    Bar_Text = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text1)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
-    Bar_Digit = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=28)
+    entry_text2 = StringVar()
+    Bar_Digit = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=button_font, textvariable = entry_text2)
     Bar_Digit.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20, width=250, height=40)
+
+    def character_limit1(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:15])
+    def character_limit2(entry_text):
+        if len(entry_text.get()) > 0:
+            entry_text.set(entry_text.get()[:2])
+
+    entry_text1.trace("w", lambda *args: character_limit1(entry_text1))
+    entry_text2.trace("w", lambda *args: character_limit2(entry_text2))
 
     btn_complite = ttk.Button(Decryption_RUS, text='Подтвердть', height=2, width=35, cursor="hand2") # , command=
     btn_complite.grid(row=1, column=0, pady=5)
@@ -161,6 +214,7 @@ def Decr_RUS():
 # BUTTONS LANGUAGE CHOOSE
 
 button_font = font.Font(size=20)
+Entry_font = font.Font(size=18)
 
 btn_ENG = ttk.Button(root, text='ENGLISH', height=4, width=35, cursor="hand2", command=ENG, font=button_font)
 btn_ENG.grid(row=1, column=0, pady=5)
