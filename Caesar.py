@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as ttk
 from tkinter import font
 from tkinter import messagebox
+from Ceasar_Code import accept
 
 # Window
 
@@ -92,7 +93,7 @@ def Encr_ENG():
     entry_text1.trace("w", lambda *args: character_limit1(entry_text1))
     entry_text2.trace("w", lambda *args: character_limit2(entry_text2))
 
-    btn_complite = ttk.Button(Encryption_ENG, text='Accept', height=2, width=35, cursor="hand2") # , command=
+    btn_complite = ttk.Button(Encryption_ENG, text='Accept', height=2, width=35, cursor="hand2", command=accept) # , command=
     btn_complite.grid(row=1, column=0, pady=5)
     btn_complite.place(relx=0.5, rely=0.5, anchor=CENTER, y=100)
 
