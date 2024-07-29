@@ -93,6 +93,9 @@ def Decr_ENG():
     Decryption_ENG.resizable(False, False)
     Decryption_ENG.configure(bg='white')
 
+    label_text = ttk.Label(Decryption_ENG, text="Write a word in the first row and a number of indent in the second", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
+    label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
+
     Bar_Text = Entry(Decryption_ENG, fg='black', bg='white', border=2, font=28)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
@@ -116,6 +119,9 @@ def Encr_RUS():
     Encryption_RUS.resizable(False, False)
     Encryption_RUS.configure(bg='white')
 
+    label_text = ttk.Label(Encryption_RUS, text="Введите слово в первую строчку и отступ во вторую", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
+    label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
+
     Bar_Text = Entry(Encryption_RUS, fg='black', bg='white', border=2, font=28)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
 
@@ -136,6 +142,9 @@ def Decr_RUS():
     Decryption_RUS.geometry('1280x720')
     Decryption_RUS.resizable(False, False)
     Decryption_RUS.configure(bg='white')
+
+    label_text = ttk.Label(Decryption_RUS, text="Введите слово в первую строчку и отступ во вторую", font=("Arial", 24), foreground="#808080", background="#FFFFFF")
+    label_text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-200)
 
     Bar_Text = Entry(Decryption_RUS, fg='black', bg='white', border=2, font=28)
     Bar_Text.place(relx=0.5, rely=0.5, anchor=CENTER, y=-80, width=250, height=40)
