@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter as ttk
 from tkinter import font
-from tkinter import messagebox
 from Ceasar_Code import accept
 
 # Window
