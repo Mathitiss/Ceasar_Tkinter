@@ -14,20 +14,32 @@ def accept(entry_text1, entry_text2, flag1, flag2):
     language = flag1
     operation = flag2
 
+    alp_ENG =  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    alp_RUS = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя'
+    result = ''
 
-    # if language == "ENG":
-    #     if operation == "ENCRYPTION":
-    #         ...
-    #     else:
-    #         ...
-    # else:
-    #     if operation == "ENCRYPTION":
-    #         ...
-    #     else:
-    #         ...
-
-
-    result = ...
+    if language == "ENG":
+        if operation == "ENCRYPTION":
+            for i in txt:
+                x = alp_ENG.find(i)
+                y = int(x) + int(ind)
+                if i in alp_ENG:
+                    result += alp_ENG[y]
+                else:
+                    result += i
+        else:
+            pass
+    else:
+        if operation == "ENCRYPTION":
+            for i in txt:
+                x = alp_RUS.find(i)
+                y = int(x) + int(ind)
+                if i in alp_RUS:
+                    result += alp_RUS[y]
+                else:
+                    result += i
+        else:
+            pass
 
     label = ttk.Label(eeee, text=result, font=("Arial", 18), foreground="black", background="white")
     label.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20)        
