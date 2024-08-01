@@ -28,7 +28,13 @@ def accept(entry_text1, entry_text2, flag1, flag2):
                 else:
                     result += i
         else:
-            pass
+            for i in txt:
+                x = alp_ENG.find(i)
+                y = int(x) - int(ind)
+                if i in alp_ENG:
+                    result += alp_ENG[y]
+                else:
+                    result += i
     else:
         if operation == "ENCRYPTION":
             for i in txt:
@@ -39,9 +45,16 @@ def accept(entry_text1, entry_text2, flag1, flag2):
                 else:
                     result += i
         else:
-            pass
+            for i in txt:
+                x = alp_RUS.find(i)
+                y = int(x) - int(ind)
+                if i in alp_RUS:
+                    result += alp_RUS[y]
+                else:
+                    result += i
 
-    label = ttk.Label(eeee, text=result, font=("Arial", 18), foreground="black", background="white")
+
+    label = ttk.Label(eeee, text=result.lower(), font=("Arial", 18), foreground="black", background="white")
     label.place(relx=0.5, rely=0.5, anchor=CENTER, y=-20)        
 
     close_btn = ttk.Button(eeee, text='close', height=2, width=25, cursor="hand2", command=eeee.destroy)
